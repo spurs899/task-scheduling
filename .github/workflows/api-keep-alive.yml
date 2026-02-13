@@ -31,10 +31,8 @@ jobs:
           # Make HTTP request to Azure API
           # Replace with your specific API endpoint and method
           response=$(curl -s -w "\n%{http_code}" \
-            -X POST \
-            -H "Content-Type: application/json" \
+            -X GET \
             -H "Authorization: Bearer ${AZURE_API_KEY}" \
-            -d '{"action": "scheduled-task"}' \
             "${AZURE_API_URL}")
 
           # Extract HTTP status code
