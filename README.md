@@ -15,11 +15,11 @@ This repository contains GitHub Actions workflows designed to run on scheduled i
 
 ### Scheduled Azure API Call
 
-Located at: `.github/workflows/scheduled-azure-api-call.yml`
+Located at: `.github/workflows/api-keep-alive.yml`
 
 This workflow makes scheduled HTTP requests to an Azure Web API endpoint.
 
-**Schedule:** Runs daily at 8:00 AM UTC (configurable)
+**Schedule:** Runs every 10 mins (configurable)
 
 **Features:**
 - Scheduled execution via cron syntax
