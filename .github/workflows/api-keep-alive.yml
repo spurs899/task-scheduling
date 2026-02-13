@@ -1,11 +1,11 @@
-name: Scheduled Azure API Call
+name: API Keep Alive
 
 # Schedule the workflow to run at specific times
 # Adjust the cron schedule as needed
 on:
   schedule:
-    # Runs every day at 8:00 AM UTC
-    - cron: '0 8 * * *'
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
   # Allow manual trigger from GitHub Actions UI
   workflow_dispatch:
 
