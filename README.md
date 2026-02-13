@@ -15,11 +15,11 @@ This repository contains GitHub Actions workflows designed to run on scheduled i
 
 ### Scheduled Azure API Call
 
-Located at: `.github/workflows/scheduled-azure-api-call.yml`
+Located at: `.github/workflows/api-keep-alive.yml`
 
 This workflow makes scheduled HTTP requests to an Azure Web API endpoint.
 
-**Schedule:** Runs daily at 8:00 AM UTC (configurable)
+**Schedule:** Runs every 10 mins (configurable)
 
 **Features:**
 - Scheduled execution via cron syntax
@@ -45,17 +45,17 @@ To use the scheduled Azure API call workflow, you need to set up the following s
 
 ### 2. Customize the Schedule
 
-The workflow uses cron syntax to define when it runs. Edit `.github/workflows/scheduled-azure-api-call.yml`:
+The workflow uses cron syntax to define when it runs. Edit `.github/workflows/api-keep-alive.yml`:
 
 ```yaml
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs at 8:00 AM UTC daily
+    - cron: '*/10 * * * *'  # Runs every 10 mins
 ```
 
 **Common cron schedule examples:**
 - `'0 * * * *'` - Every hour
-- `'*/15 * * * *'` - Every 15 minutes
+- `'*/10 * * * *'` - Every 10 minutes
 - `'0 0 * * *'` - Daily at midnight UTC
 - `'0 9 * * 1-5'` - Weekdays at 9:00 AM UTC
 - `'0 0 1 * *'` - First day of every month
