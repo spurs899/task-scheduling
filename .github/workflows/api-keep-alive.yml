@@ -4,8 +4,8 @@ name: API Keep Alive
 # Adjust the cron schedule as needed
 on:
   schedule:
-    # Runs every 10 minutes
-    - cron: '*/10 * * * *'
+    # Runs every 10 minutes (offset to avoid congested time slots)
+    - cron: '3,13,23,33,43,53 * * * *'
   # Allow manual trigger from GitHub Actions UI
   workflow_dispatch:
 
